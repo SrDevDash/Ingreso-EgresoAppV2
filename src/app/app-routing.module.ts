@@ -1,10 +1,33 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { LoginComponent } from "./Auth/login/login.component";
+import { RegisterComponent } from "./Auth/register/register.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { dashboardRoutes } from "./dashboard/dashboard.route";
+import { FooterComponent } from "./shared/footer/footer.component";
 
-const routes: Routes = [];
 
+
+const routes: Routes = [
+    {
+      path: '', 
+      component: DashboardComponent,
+      children: dashboardRoutes
+    },
+    {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'footer', component: FooterComponent},
+    {path: '**', redirectTo: ''}
+]
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(routes),
+    ],
+    exports: [
+        RouterModule,
+    ],
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule{
+
+}
