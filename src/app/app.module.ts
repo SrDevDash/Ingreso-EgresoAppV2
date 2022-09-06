@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { NgChartsModule } from 'ng2-charts';
 
 
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
@@ -24,6 +25,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { LoginComponent } from './Auth/login/login.component';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './app.reducer';
+import { OrdenItemsPipe } from './pipes/orden-items.pipe';
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { appReducers } from './app.reducer';
     DetalleComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrdenItemsPipe
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { appReducers } from './app.reducer';
       logOnly: environment.production, // Restrict extension to log-only mode
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
+    NgChartsModule
   ],
   providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase } ],
   bootstrap: [AppComponent]
