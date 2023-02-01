@@ -1,5 +1,10 @@
 # IngresoEgreso
 
+### preview
+
+![image](https://user-images.githubusercontent.com/62898809/216083556-6a4f4c8c-f128-4c2d-96b9-47f73e7abd1b.png)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 
 ## Development server
